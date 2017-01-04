@@ -129,6 +129,8 @@ body {
 
 .blockRider {
   margin: 0 0 10px 0;
+  max-width: 300px;
+  min-width: 299px;
 }
 
 
@@ -251,7 +253,7 @@ body {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 0 13%;
+  /*margin: 0 13%;*/
 }
 
 .sliderImg {
