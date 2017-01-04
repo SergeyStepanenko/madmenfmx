@@ -3,7 +3,9 @@
 ::-moz-selection {color:#fff;background:#850D0E;}
 
 
-html { height: 100%; }
+html {
+  height: 100%;
+}
 
 body {
   position: relative;
@@ -49,6 +51,8 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+
 
 .headerBlock1 {
   -webkit-box-flex: 1;

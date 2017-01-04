@@ -23,9 +23,6 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px) {
-	.blockRider {
-    margin: 0 0 10px 0;
-	}
 
 	.headerBlock2 {
 		display: none;
@@ -38,6 +35,10 @@
 	.image {
 		width: 500px;
 		height: auto;
+	}
+
+	.blockRider {
+    margin: 0 0 10px 0;
 	}
 
 	.headerForSmallDevices {
@@ -101,13 +102,55 @@
 		width: 300px;
 		height: auto;
 	}
+	.blockHeader {
+		font: 35px "American Captain", Consolas, sans-serif;
+	}
+
+	.advantagesImg {
+		height: 250px;
+		width: auto;
+	}
+
+	.youtubeVideo {
+		width: 250px;
+		height: auto;
+	}
+
+	.sliderImg {
+		width: 400px;
+		height: 274px;
+	}
 }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {
+
+	html {
+		overflow-x: hidden;
+	}
+
 	.image {
 		width: 200px;
 		height: auto;
+	}
+
+	.blockHeader {
+		font: 35px "American Captain", Consolas, sans-serif;
+	}
+
+	.sliderImg {
+		width: 280px;
+		height: 200px;
+	}
+
+	.advantagesImg {
+		height: 280px;
+		width: auto;
+	}
+
+	.riderName {
+    font: 25px "American Captain", Consolas, Sans-Serif;
+		padding: 0 0 0 8px;
 	}
 }
 
