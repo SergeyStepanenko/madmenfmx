@@ -1,4 +1,7 @@
+//test
+
 ; "use strict";
+
 var maxImgNumber = 11;
 var sliderImgNum;
 
