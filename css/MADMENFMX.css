@@ -1,0 +1,365 @@
+::-moz-selection {color:#fff;background:#850D0E;}
+::selection {color:#fff;background:#850D0E;}
+::-moz-selection {color:#fff;background:#850D0E;}
+
+
+html { height: 100%; }
+
+body {
+  position: relative;
+  margin: 0 0 0 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #F5F5F5;
+  transition: all 350ms;
+  -o-transition: all 350ms;
+  -moz-transition: all 350ms;
+  -webkit-transition: all 350ms;
+}
+
+
+
+
+.contentWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*background: url(../images/backgroundImage.jpg);
+  background-repeat: repeat;
+  background-size: 100%;
+  background-attachment: fixed;*/
+}
+
+.center {
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 768px;
+          flex: 3 1 768px;
+  margin-top: 20px;
+}
+
+.header {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1030;
+  background-color: #AA2222;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.headerBlock1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 10px;
+  font: 1.7em "RobotoBold",Consolas,sans-serif;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.headerBlock2 {
+  margin: 0px 15px 0px 15px;
+}
+
+.headerBlock2 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.headerBlock2 ul a{
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding-top: 5px 0 0 0;
+  white-space: nowrap;
+  -webkit-transition:background 0.9s ease;
+  transition: background 0.9s ease;
+  text-transform: uppercase;
+}
+
+.headerBlock2 ul a:hover {
+  background: #B95555;
+  -webkit-transition:background 0.19s ease;
+  transition: background 0.19s ease;
+}
+
+.headerBlock2 ul a {
+  text-decoration: none;
+  font-size: 0.8em;
+  padding: 0 5px 0 5px;
+  font-family: "RobotoLight";
+  color: #F5F5F5;
+  line-height: 50px;
+}
+
+.headerBlock3 {
+  position: fixed;
+  right: 9px;
+  top: 12px;
+}
+
+.headerForSmallDevices {
+
+}
+
+
+.riderDescription li {
+  font-family: "RobotoRegular";
+  font-size: 0.8em;
+}
+
+
+.blockOurRiders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.blockRider {
+  margin: 0 0 10px 0;
+}
+
+
+.riderName {
+  font: 33px "American Captain", Consolas, Sans-Serif;
+	color: #AA2222;
+  padding: 0 0 0 10px;
+}
+
+.riderDescription {
+  padding: 0 0 0 10px;
+}
+
+.blockHeader{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 100px;
+  font: 60px "American Captain", Consolas, sans-serif;
+  padding: 10px 10px 10px 10px;
+}
+
+.red {
+  color: #AA2222;
+  padding-right: 5px;
+}
+
+.overlay {
+  background-color: #2f2d2d;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+}
+
+.galleryWrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 15;
+}
+
+.gallery {
+  position: fixed;
+  z-index: 100;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+}
+
+.closePopup {
+  position: fixed;
+  font-size: 30px;
+  font-weight: bolder;
+  padding: 0 10px 0 10px;
+  z-index: 100;
+  right: 0;
+  top: 0;
+  padding: 20px 40px;
+  -webkit-transition:background 0.9s ease;
+  transition: background 0.9s ease;
+}
+
+.closePopup:hover {
+  background: #CCCCCC;
+  -webkit-transition:background 0.19s ease;
+  transition: background 0.19s ease;
+}
+
+.imgWrapper {
+  z-index: 1000;
+  /*height: 666px;*/
+  box-shadow: 0px 0px 34px 18px rgba(0, 0, 0, 0.2);
+}
+
+.arrowLeft,
+.arrowRight {
+  font-size: 70px;
+  font-weight: bolder;
+  padding: 0px 6px 0 10px;
+  z-index: 100;
+  -webkit-transition:background 0.9s ease;
+  transition: background 0.9s ease;
+}
+
+.arrowLeft {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.arrow:hover {
+  background: #CCCCCC;
+  -webkit-transition:background 0.19s ease;
+  transition: background 0.19s ease;
+}
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 13%;
+}
+
+.sliderImg {
+  margin: 5px 5px;
+  -webkit-transition:opacity 0.9s ease;
+  transition: opacity 0.9s ease;
+  cursor: pointer;
+  box-shadow: 0px 0px 56px 2px rgba(0, 0, 0, 0.2);
+}
+
+.sliderImg:hover {
+  opacity: 0.8;
+  -webkit-transition:opacity 0.19s ease;
+  transition: opacity 0.19s ease;
+}
+
+
+/* наши преимущества */
+
+.blockAdvantages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.advantagesImages {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 90%;
+}
+
+.textAdvantages {
+  width: 300px;
+  font-family: "RobotoRegular";
+  font-size: 1em;
+  border-top: 5px solid #AA2222;
+}
+
+/*Наши партнеры*/
+
+.ourPartners {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ourPartnersLogos {
+  margin: 0 5px 0 5px;
+}
+
+.partnerImg{
+  -webkit-transition:width 0.9s ease;
+  transition: width 0.9s ease;
+}
+
+.partnerImg:hover {
+  width: 200px;
+  -webkit-transition:width 0.9s ease;
+  transition: width 0.9s ease;
+}
+
+.blockVideo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.youtubeVideo {
+  margin: 5px 5px;
+  box-shadow: 0px 0px 52px 13px rgba(0, 0, 0, 0.2)
+}
+
+.footerWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mapOfTheShowsBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
