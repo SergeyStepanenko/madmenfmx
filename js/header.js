@@ -1,5 +1,3 @@
-//test
-
 ; "use strict";
 
 var menuStatus = 0;

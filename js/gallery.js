@@ -1,5 +1,3 @@
-//test
-
 ; "use strict";
 
 var maxImgNumber = 11;
