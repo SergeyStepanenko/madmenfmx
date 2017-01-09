@@ -8,9 +8,7 @@ function getImgPath(img) {
   var img = document.getElementById("img");
 
   path = imgPath.substr(imgPath.length - 10);
-  console.log(path);
   sliderImgNum = +path.replace(/\D/g,'');
-  console.log(sliderImgNum);
 
 
   img.setAttribute("src", "images/big/" + sliderImgNum + ".jpg");

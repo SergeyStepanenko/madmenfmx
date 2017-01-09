@@ -72,7 +72,13 @@
 	  position: fixed;
 	  right: 9px;
 	  bottom: 12px;
+		z-index: 100;
 	}
+
+	::-webkit-scrollbar {
+    display: none;
+	}
+
 }
 
 /* custom 2 */
@@ -117,8 +123,14 @@
 	}
 
 	.sliderImg {
-		width: 400px;
-		height: 274px;
+		/*width: 400px;
+		height: 274px;*/
+		width: 95%;
+		height: 80%;
+	}
+
+	.youtubeVideo {
+		width: 95%;
 	}
 }
 
@@ -138,10 +150,10 @@
 		font: 35px "American Captain", Consolas, sans-serif;
 	}
 
-	.sliderImg {
+	/*.sliderImg {
 		width: 280px;
 		height: 200px;
-	}
+	}*/
 
 	.advantagesImg {
 		height: 280px;

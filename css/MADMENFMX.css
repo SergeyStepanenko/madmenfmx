@@ -52,8 +52,6 @@ body {
           justify-content: center;
 }
 
-
-
 .headerBlock1 {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -210,7 +208,7 @@ body {
   z-index: 100;
   right: 0;
   top: 0;
-  padding: 20px 40px;
+  padding: 30px 50px;
   -webkit-transition:background 0.9s ease;
   transition: background 0.9s ease;
 }
@@ -229,12 +227,19 @@ body {
 
 .arrowLeft,
 .arrowRight {
-  font-size: 70px;
-  font-weight: bolder;
-  padding: 0px 6px 0 10px;
+  padding: 25px 25px;
   z-index: 100;
   -webkit-transition:background 0.9s ease;
   transition: background 0.9s ease;
+  background: rgba(204, 204, 204, 0.18);
+}
+
+.arrowLeft:hover {
+  background: rgba(204, 204, 204, 0.82);
+}
+
+.arrowRight:hover {
+  background: rgba(204, 204, 204, 0.82);
 }
 
 .arrowLeft {
@@ -242,10 +247,17 @@ body {
           transform: rotate(180deg);
 }
 
+.arrow {
+  border-radius: 25px;
+  -webkit-transition:opacity 0.19s ease;
+  transition: opacity 0.19s ease;
+  opacity: 0.7;
+}
+
 .arrow:hover {
-  background: #CCCCCC;
-  -webkit-transition:background 0.19s ease;
-  transition: background 0.19s ease;
+  -webkit-transition:opacity 0.19s ease;
+  transition: opacity 0.19s ease;
+  opacity: 1;
 }
 
 .slider {
@@ -305,8 +317,6 @@ body {
   border-top: 5px solid #AA2222;
 }
 
-/*Наши партнеры*/
-
 .ourPartners {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -361,11 +371,30 @@ body {
           justify-content: center;
 }
 
-.mapOfTheShowsBlock {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.showsBlock {
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.showsText {
+  font: 1em "RobotoRegular";
+  display: block;
+  text-align: center;
+}
+
+.showsContainer {
+  max-width: 200px;
+  margin: 2px;
+  border: 2px solid white;
+  box-shadow: 0px 0px 56px 2px rgba(0, 0, 0, 0.2);
+}
+
+.separatorLine {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
 }
