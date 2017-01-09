@@ -3,7 +3,7 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
 	.image {
-		width: 700px;
+		width: 800px;
 		height: auto;
 	}
 }
@@ -19,7 +19,10 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-
+	.image {
+		width: 700px;
+		height: auto;
+	}
 }
 
 /* custom */
@@ -84,14 +87,25 @@
 		z-index: 100;
 	}
 
-	::-webkit-scrollbar {
+	/*::-webkit-scrollbar {
     display: none;
-	}
+	}*/
 
 	.arrowLeft,
 	.arrowRight {
 	  padding: 15px;
 	}
+/*------------------test-----------------*/
+	/*.slider {
+	  display: flex;
+		flex-wrap: nowrap;
+		position: relative;
+		height: 200px;
+		width: 768px;
+		overflow-x: scroll;
+
+	}*/
+/*------------------test-----------------*/
 }
 
 /* custom 2 */
