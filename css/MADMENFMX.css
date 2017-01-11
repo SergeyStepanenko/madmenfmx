@@ -281,9 +281,6 @@ body {
   transition: opacity 0.19s ease;
 }
 
-
-/* наши преимущества */
-
 .blockAdvantages {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -516,4 +513,8 @@ body {
 
 .riderPhoto:hover #riderInst {
   left: 10px;
+}
+
+.headerButton {
+  padding: 0 10px 10px 0;
 }

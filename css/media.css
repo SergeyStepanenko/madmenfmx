@@ -36,6 +36,8 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px) {
 
+	
+
 	.headerBlock2 {
 		display: none;
 	}
@@ -154,9 +156,7 @@
 		height: auto;
 	}
 
-	.sliderImg {
-		/*width: 400px;
-		height: 274px;*/
+	.smallImage {
 		width: 95%;
 		height: 80%;
 	}
@@ -186,11 +186,6 @@
 	.blockHeader {
 		font: 35px "American Captain", Consolas, sans-serif;
 	}
-
-	/*.sliderImg {
-		width: 280px;
-		height: 200px;
-	}*/
 
 	.advantagesImg {
 		height: 280px;

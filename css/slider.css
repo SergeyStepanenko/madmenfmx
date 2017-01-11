@@ -1,11 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Slab:100);
 
-.swaper-wrap {
+.slider-wrap {
   width: 300px;
   height: 500px;
   margin: 20px auto;
 }
-.swaper {
+.slider {
   overflow-x: scroll;
 }
 .holder {
@@ -45,11 +45,11 @@
   height: 40%;
   background: linear-gradient(transparent, black);
 }
-.swaper-nav {
+.slider-nav {
   text-align: center;
   margin: 10px 0 0 0;
 }
-.swaper-nav a {
+.slider-nav a {
   width: 10px;
   height: 10px;
   display: inline-block;
@@ -58,6 +58,6 @@
   text-indent: -9999px;
   border-radius: 50%;
 }
-.swaper-nav a.active {
+.slider-nav a.active {
   background: #999;
 }
