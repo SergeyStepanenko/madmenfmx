@@ -9,12 +9,12 @@
 }
 
 /* custom */
-@media only screen and (max-width : 1516px) and (min-width : 1199px) {
+/*@media only screen and (max-width : 1516px) and (min-width : 1199px) {
 	.blockOurRiders {
-		width: 1199px;
+		max-width: 2000px;
 		margin: 0 auto;
 	}
-}
+}*/
 
 
 /* Medium Devices, Desktops */
@@ -198,6 +198,15 @@
     font: 25px "American Captain", Consolas, Sans-Serif;
 		padding: 0 0 0 8px;
 	}
+
+	.headerButton {
+		width: 100px;
+		padding: 0;
+	}
+
+	.headerButtonArrow {
+		display: none;
+	}
 }
 
 
@@ -222,7 +231,7 @@
 		margin-top: 50px;
 	}
 
-	.headerButton {
+	.headerButtonArrow {
 		display: none;
 	}
 }
