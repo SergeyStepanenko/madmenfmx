@@ -36,7 +36,7 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px) {
 
-	
+
 
 	.headerBlock2 {
 		display: none;
@@ -56,14 +56,16 @@
 	}
 
 	.headerForSmallDevices {
-		/*position: fixed;*/
-		-ms-flex-flow: column;
-		    flex-flow: column;
-		overflow: hidden;
-		-webkit-transition: background 0.9s ease;
-		transition: background 0.9s ease;
+		position: relative;
+		z-index: 1000;
+		flex-flow: column;
+		top: -300px;
 		width: 100%;
 		height: 0px;
+		transition: all 0.5s ease-in-out;
+		-webkit-transition: all 0.5s ease-in-out;
+		-moz-transition: all 0.5s ease-in-out;
+		-o-transition: all 0.5s ease-in-out;
 	}
 
 	.headerForSmallDevices a {
