@@ -1,6 +1,7 @@
 ; "use strict";
 
-var maxImgNumber = 11;
+var allImgs = document.querySelectorAll(".smallImage");
+var maxImgNumber = allImgs.length;
 var sliderImgNum;
 
 function getImgPath(img) {
