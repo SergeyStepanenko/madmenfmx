@@ -1,53 +1,128 @@
-var startPoint={};
+; "use strict";
+var startPoint = {};
 var nowPoint;
-var ldelay;
-var img = document.querySelectorAll(".galleryForMobile")[0];
+var img = document.querySelector(".galleryForMobile");
+var leng = document.querySelectorAll(".imageMobileGallery").length * -100 + 100;
+var translatePosition = 0;
+var transformPart1 = "translate3d(";
+var transformPart2 = "%, 0, 0)";
+var transformPart3 = "%,";
+var transformPart4 = "%, 0)";
+var counter;
+var sliderPosition = 0;
+var sliderPosition_Y;
+var currentFingerPositionInPercent_X;
+var currentFingerPositionInPercent_Y;
+var currentFingerPosition;
+var otk = {};
+var initialPosition;
+var animationOn = 'document.querySelector(".galleryForMobile").style.transition = "all 0.2s cubic-bezier(0.47, 0.48, 0.5, 0.67)"';
+var screenWidth;
+var screenHeight;
+var backgroundFadeOutPart1 = "rgba(0, 0, 0, "
+var backgroundFadeOutPart2 = ")"
+var backgroundOpacityChange = backgroundFadeOutPart1 + (sliderPosition_Y / 10) + backgroundFadeOutPart2;
 
-img.addEventListener('touchstart', function(event) {
-  event.preventDefault();
-  event.stopPropagation();
-  startPoint.x = event.changedTouches[0].pageX;
-  startPoint.y = event.changedTouches[0].pageY;
-  ldelay = new Date();
+
+var smallImage = document.querySelector(".smallImage");
+smallImage.addEventListener("click", function (event) {
+  document.querySelector(".galleryForMobileWrapper").style.display = "flex";
 }, false);
 
-/*Ловим движение пальцем*/
+
+window.onload = function () {
+  screenWidth = document.querySelector(".imageMobileGallery").width;
+  screenHeight = document.querySelector(".imageMobileGallery").height;
+  console.log("screenWidth " + screenWidth);
+  console.log("screenHeight " + screenHeight);
+}
+
+img.addEventListener('touchstart', function (event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  startPoint.x = event.changedTouches[0].pageX || event.changedTouches[0].clientX;
+  startPoint.y = event.changedTouches[0].pageY || event.changedTouches[0].clientY;
+}, false);
+
 img.addEventListener('touchmove', function(event) {
-  event.preventDefault();
-  event.stopPropagation();
-
-  var otk={};
-
   nowPoint = event.changedTouches[0];
-  otk.x = nowPoint.pageX  -startPoint.x;
+  otk.x = nowPoint.pageX - startPoint.x;
+  otk.y = nowPoint.pageY - startPoint.y;
 
-  /*Обработайте данные*/
-  /*Для примера*/
-  if(Math.abs(otk.x) > 300){
-  if(otk.x < 0) {alert("СВАЙП 300px ВЛЕВО")};
-  if(otk.x > 0) {alert("СВАЙП 300px ВПРАВО")};
+  currentFingerPosition = otk.x / screenWidth * 100;                                           //получаем позицию пальца в реальном времени БЕЗ УЧЕТА ПРОКРУТКИ в %
+  currentFingerPositionInPercent_X = otk.x.toFixed(0) / screenWidth * 100 + translatePosition; //получаем позицию пальца в реальном времени С УЧЕТОМ ПРОКРУТКИ в %
+  currentFingerPositionInPercent_X = currentFingerPositionInPercent_X.toFixed(0);
+  sliderPosition = transformPart1 + currentFingerPositionInPercent_X + transformPart2;
 
-  startPoint = {x:nowPoint.pageX, y:nowPoint.pageY};
 
-  }
+  sliderPosition_Y = transformPart1 + translatePosition + transformPart3 + currentFingerPositionInPercent_Y / 2 + transformPart4;;
+
+  currentFingerPositionInPercent_Y = otk.y / screenWidth * 100;     //получаем позицию пальца в реальном времени С УЧЕТОМ ПРОКРУТКИ в %
+  currentFingerPositionInPercent_Y = currentFingerPositionInPercent_Y.toFixed(0);
+
+
+  (function toDragimageMobileGalleryInRealTime () {
+    if (Math.abs(currentFingerPosition) > 5) {
+      document.querySelector(".galleryForMobile").style.transition = "all 0.0s ease-in-out";
+      document.querySelector(".galleryForMobile").style.transform = sliderPosition; // текущий сдвиг по подсчету translate в реальном времени
+    };
+
+  (function swipeUpOrDownToCloseGallery () {
+    if (currentFingerPositionInPercent_Y > 10 || currentFingerPositionInPercent_Y < -10) {
+      document.querySelector(".galleryForMobile").style.transition = "all 0.0s ease-in-out";
+      document.querySelector(".galleryForMobile").style.transform = sliderPosition_Y;
+      var fadeOut = backgroundFadeOutPart1 + (1 - Math.abs(currentFingerPositionInPercent_Y) / 100) + backgroundFadeOutPart2;
+      document.querySelector(".galleryForMobileWrapper").style.background = fadeOut;
+    }
+  })();
+
+
+  }());
 }, false);
 
-/*Ловим отпускание пальца*/
+function returnimageMobileGalleryToItsIntendedPosition () {
+  initialPosition = transformPart1 + translatePosition + transformPart2;
+  document.querySelector(".galleryForMobile").style.transform = initialPosition;
+};
+
 img.addEventListener('touchend', function(event) {
+  document.querySelector(".galleryForMobileWrapper").style.background = "rgba(0, 0, 0, 1)";
+  eval (animationOn);
 
-  var pdelay = new Date();
-  nowPoint = event.changedTouches[0];
-  var xAbs = Math.abs(startPoint.x - nowPoint.pageX);
-  var yAbs = Math.abs(startPoint.y - nowPoint.pageY);
+  (function ifDraggedUpOrDownForMoreThen20Percent () {
+    if (Math.abs(currentFingerPositionInPercent_Y) > 30) {
+      document.querySelector(".galleryForMobileWrapper").style.display = "none";
+    }
+  }());
 
-  if ((xAbs > 20 || yAbs > 20) && (pdelay.getTime() - ldelay.getTime()) < 200) {
-    if (xAbs > yAbs) {
-      if (nowPoint.pageX < startPoint.x){alert("СВАЙП ВЛЕВО")}
-      else{alert("СВАЙП ВПРАВО")}
+  (function ifDraggedLessThan20Percent () {
+    if (Math.abs(currentFingerPosition) < 40) {
+      initialPosition = transformPart1 + translatePosition + transformPart2;
+      document.querySelector(".galleryForMobile").style.transform = initialPosition;
     }
-    else {
-      if (nowPoint.pageY < startPoint.y){alert("СВАЙП ВВЕРХ")}
-      else{alert("СВАЙП ВНИЗ")}
+  }());
+
+  (function toShowNextOrPreviousimageMobileGalleryOrNot () {
+    if (currentFingerPosition < -20) { //если перетащил БОЛЬШЕ чем на 20% ВЛЕВО или это последняя картинка - тогда картинка ПЕРЕКЛЮЧАЕТСЯ ВЛЕВО
+
+      translatePosition += -100;
+      returnimageMobileGalleryToItsIntendedPosition ();
+    } else if (currentFingerPosition > 20 & translatePosition != 0) { //если перетащил БОЛЬШЕ чем на 20% ВПРАВО - тогда картинка ПЕРЕКЛЮЧАЕТСЯ ВПРАВО
+      translatePosition += 100;
+      returnimageMobileGalleryToItsIntendedPosition ();
+    } else if (translatePosition == 0) { //если перетащил первую картинку ВЛЕВО более чем на 20% вправо, то НЕ ПЕРЕКЛЮЧАТЬ
+      returnimageMobileGalleryToItsIntendedPosition ();
     }
-  }
+    else if (translatePosition > leng) {
+      document.querySelector(".galleryForMobile").style.transform = initialPosition;
+    }
+    if (translatePosition == leng + -100) {
+      document.querySelector(".galleryForMobile").style.transform = transformPart1 + 0 + transformPart2;
+      document.querySelector(".galleryForMobile").style.transition = "all 0.5s cubic-bezier(0.47, 0.48, 0.5, 0.67)"
+      translatePosition = 0;
+
+
+    }
+  })();
 }, false);

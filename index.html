@@ -19,7 +19,7 @@
   </head>
   <body>
     <div id="veryTop"></div>
-<!-- галлерея -------------------------->
+
     <div class="overlay" id="overlay" style="display: none"></div>
 
     <div class="gallery" id="gallery" style="display: none">
@@ -36,7 +36,24 @@
     </div>
 
 
-<!-- галлерея -------------------------->
+
+<div class="galleryForMobileWrapper" style="display: none">
+  <div class="galleryForMobile">
+    <div class="imgDiv"><img class="imageMobileGallery" src="images/small/1.jpg" alt="" ></div>
+    <div class="imgDiv"><img class="imageMobileGallery" src="images/small/2.jpg" alt="" ></div>
+    <div class="imgDiv"><img class="imageMobileGallery" src="images/small/3.jpg" alt="" ></div>
+    <div class="imgDiv"><img class="imageMobileGallery" src="images/small/4.jpg" alt="" ></div>
+    <div class="imgDiv"><img class="imageMobileGallery" src="images/small/5.jpg" alt="" ></div>
+    <div class="imgDiv"><img class="imageMobileGallery" src="images/small/6.jpg" alt="" ></div>
+    <div class="imgDiv"><img class="imageMobileGallery" src="images/small/7.jpg" alt="" ></div>
+    <div class="imgDiv"><img class="imageMobileGallery" src="images/small/8.jpg" alt="" ></div>
+    <div class="imgDiv"><img class="imageMobileGallery" src="images/small/9.jpg" alt="" ></div>
+    <div class="imgDiv"><img class="imageMobileGallery" src="images/small/10.jpg" alt="" ></div>
+  </div>
+</div>
+
+
+
       <div class="header" id="header" style="display: flex">
             <div class="headerBlock2">
               <ul>
@@ -162,7 +179,7 @@
   <span class="blockHeader"><span class="red">НАША</span> ФОТОГАЛЛЕРЕЯ</span>
 
   <div class="blockSmallImages">
-      <img class="smallImage" id="smallImage" onclick="getImgPath(this)" src="images/small/1.jpg" alt="" width="200px" height="137px"></img>
+      <img class="smallImage" id="smallImage" onclick="" src="images/small/1.jpg" alt="" width="200px" height="137px"></img>
       <img class="smallImage" id="smallImage" onclick="getImgPath(this)" src="images/small/2.jpg" alt="" width="200px" height="137px"></img>
       <img class="smallImage" id="smallImage" onclick="getImgPath(this)" src="images/small/3.jpg" alt="" width="200px" height="137px"></img>
       <img class="smallImage" id="smallImage" onclick="getImgPath(this)" src="images/small/4.jpg" alt="" width="200px" height="137px"></img>
@@ -205,9 +222,9 @@
    <a id="video"></a>
    <span id="ourVideo" class="blockHeader"><span class="red">НАШИ</span> ВИДЕО</span>
    <div class="blockVideo">
-     <iframe class="youtubeVideo"width="400" height="225" src="https://www.youtube.com/embed/CjYTP_bAsIU" frameborder="0" allowfullscreen></iframe>
+     <!-- <iframe class="youtubeVideo"width="400" height="225" src="https://www.youtube.com/embed/CjYTP_bAsIU" frameborder="0" allowfullscreen></iframe>
      <iframe class="youtubeVideo"width="400" height="225" src="https://www.youtube.com/embed/atZGl4oCcns" frameborder="0" allowfullscreen></iframe>
-     <iframe class="youtubeVideo"width="400" height="225" src="https://www.youtube.com/embed/aTJiMtDCme0" frameborder="0" allowfullscreen></iframe>
+     <iframe class="youtubeVideo"width="400" height="225" src="https://www.youtube.com/embed/aTJiMtDCme0" frameborder="0" allowfullscreen></iframe> -->
    </div>
 
    <hr class="separatorLine">
@@ -283,11 +300,6 @@
     </div>
     <hr class="separatorLine">
 
-<!-- slider --------------------------------------------------------------------------------->
-
-
-
-<!-- slider -------------------------------------------------------------------------------->
 
  <div class="footerWrapper">
     <a class="socialNetworkIco" style="padding: 5px" href="https://vk.com/madmenfmx" target="_blank"><img src="images/vk.png" width="40" height="40" alt="" /></a>
@@ -296,7 +308,8 @@
     <a class="socialNetworkIco" style="padding: 5px" href="https://www.youtube.com/channel/UCrguWdw7zGK4ljAIv_EIp_g" target="_blank"><img src="images/youtube.png" width="40" height="40" alt="" /> </a>
  </div>
 
-<script type="text/javascript" src="js/gallery.js"></script> <!-- JS фотогаллерея -->
+<script type="text/javascript" src="js/gallery.js"></script>
+<script type="text/javascript" src="js/galleryMobile.js"></script>
 
 
 <!--- Плавный скролл ----------------------------------------------------------------------------------------------->

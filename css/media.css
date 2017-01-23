@@ -35,9 +35,6 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px) {
-
-
-
 	.headerBlock2 {
 		display: none;
 	}
