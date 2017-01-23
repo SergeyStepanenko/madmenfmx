@@ -23,18 +23,29 @@ var backgroundFadeOutPart1 = "rgba(0, 0, 0, "
 var backgroundFadeOutPart2 = ")"
 var backgroundOpacityChange = backgroundFadeOutPart1 + (sliderPosition_Y / 10) + backgroundFadeOutPart2;
 
+var width = document.body.clientWidth;
 
-var smallImage = document.querySelector(".smallImage");
-smallImage.addEventListener("click", function (event) {
-  document.querySelector(".galleryForMobileWrapper").style.display = "flex";
-}, false);
+var numOfImgsInGallery = document.querySelectorAll(".smallImage");
+console.log(numOfImgsInGallery.length);
 
+(function appendGalleryPopUp () {
+  if (width < 768) {
+    for (var i = 0; i < numOfImgsInGallery.length; i++) {
+      console.log(numOfImgsInGallery[i].src);
+      document.querySelectorAll(".smallImage")[i].onclick = function() {
+        document.querySelector(".galleryForMobileWrapper").style.display = "flex";
+        // document.querySelector(".galleryForMobile").style.transform = "translate3d(-100%, 0, 0)";
+      }
+    }
+  }
+
+}());
+
+// console.log(width);
 
 window.onload = function () {
   screenWidth = document.querySelector(".imageMobileGallery").width;
   screenHeight = document.querySelector(".imageMobileGallery").height;
-  console.log("screenWidth " + screenWidth);
-  console.log("screenHeight " + screenHeight);
 }
 
 img.addEventListener('touchstart', function (event) {

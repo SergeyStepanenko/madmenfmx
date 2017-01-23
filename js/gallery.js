@@ -3,24 +3,25 @@
 var allImgs = document.querySelectorAll(".smallImage");
 var maxImgNumber = allImgs.length;
 var sliderImgNum;
+var width = document.body.clientWidth;
 
-function getImgPath(img) {
-  var imgPath = img.src;
-  var img = document.getElementById("img");
+if (width >= 768) {
+  function getImgPath(img) {
+    var imgPath = img.src;
+    var img = document.getElementById("img");
+    path = imgPath.substr(imgPath.length - 10);
+    sliderImgNum = +path.replace(/\D/g,'');
 
-  path = imgPath.substr(imgPath.length - 10);
-  sliderImgNum = +path.replace(/\D/g,'');
+    img.setAttribute("src", "images/big/" + sliderImgNum + ".jpg");
 
+    document.getElementById('overlay').style.display = 'flex';
+    document.getElementById('gallery').style.display = 'flex';
+    document.getElementById('header').style.display = 'none';
+    document.getElementById('homeButtonForSmallDevices').style.display = 'none';
 
-  img.setAttribute("src", "images/big/" + sliderImgNum + ".jpg");
-
-  document.getElementById('overlay').style.display = 'flex';
-  document.getElementById('gallery').style.display = 'flex';
-  document.getElementById('header').style.display = 'none';
-  document.getElementById('homeButtonForSmallDevices').style.display = 'none';
-
-  return false;
-};
+    return false;
+  };
+}
 
 document.querySelectorAll(".closePopup")[0].onclick = function() {
   document.getElementById('overlay').style.display = 'none';
