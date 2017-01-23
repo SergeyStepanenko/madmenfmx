@@ -91,7 +91,7 @@ img.addEventListener('touchend', function(event) {
   eval (animationOn);
 
   (function ifDraggedUpOrDownForMoreThen20Percent () {
-    if (Math.abs(currentFingerPositionInPercent_Y) > 30) {
+    if (Math.abs(currentFingerPositionInPercent_Y) > 20) {
       document.querySelector(".galleryForMobileWrapper").style.display = "none";
     }
   }());
