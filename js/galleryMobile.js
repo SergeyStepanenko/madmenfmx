@@ -69,7 +69,7 @@ img.addEventListener('touchmove', function(event) {
     };
 
   (function swipeUpOrDownToCloseGallery () {
-    if (currentFingerPositionInPercent_Y > 10 || currentFingerPositionInPercent_Y < -10) {
+    if (currentFingerPositionInPercent_Y > 12 || currentFingerPositionInPercent_Y < -12) {
       document.querySelector(".galleryForMobile").style.transition = "all 0.0s ease-in-out";
       document.querySelector(".galleryForMobile").style.transform = sliderPosition_Y;
       var fadeOut = backgroundFadeOutPart1 + (1 - Math.abs(currentFingerPositionInPercent_Y) / 100) + backgroundFadeOutPart2;
@@ -97,7 +97,7 @@ img.addEventListener('touchend', function(event) {
   }());
 
   (function ifDraggedLessThan20Percent () {
-    if (Math.abs(currentFingerPosition) < 40) {
+    if (Math.abs(currentFingerPosition) < 30) {
       initialPosition = transformPart1 + translatePosition + transformPart2;
       document.querySelector(".galleryForMobile").style.transform = initialPosition;
     }
