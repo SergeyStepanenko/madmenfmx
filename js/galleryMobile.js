@@ -104,11 +104,11 @@ img.addEventListener('touchend', function(event) {
   }());
 
   (function toShowNextOrPreviousimageMobileGalleryOrNot () {
-    if (currentFingerPosition < -10) { //если перетащил БОЛЬШЕ чем на 20% ВЛЕВО или это последняя картинка - тогда картинка ПЕРЕКЛЮЧАЕТСЯ ВЛЕВО
+    if (currentFingerPosition < -7) { //если перетащил БОЛЬШЕ чем на 20% ВЛЕВО или это последняя картинка - тогда картинка ПЕРЕКЛЮЧАЕТСЯ ВЛЕВО
 
       translatePosition += -100;
       returnimageMobileGalleryToItsIntendedPosition ();
-    } else if (currentFingerPosition > 10 & translatePosition != 0) { //если перетащил БОЛЬШЕ чем на 20% ВПРАВО - тогда картинка ПЕРЕКЛЮЧАЕТСЯ ВПРАВО
+    } else if (currentFingerPosition > 7 & translatePosition != 0) { //если перетащил БОЛЬШЕ чем на 20% ВПРАВО - тогда картинка ПЕРЕКЛЮЧАЕТСЯ ВПРАВО
       translatePosition += 100;
       returnimageMobileGalleryToItsIntendedPosition ();
     } else if (translatePosition == 0) { //если перетащил первую картинку ВЛЕВО более чем на 20% вправо, то НЕ ПЕРЕКЛЮЧАТЬ
