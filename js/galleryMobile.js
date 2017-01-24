@@ -22,24 +22,57 @@ var screenHeight;
 var backgroundFadeOutPart1 = "rgba(0, 0, 0, "
 var backgroundFadeOutPart2 = ")"
 var backgroundOpacityChange = backgroundFadeOutPart1 + (sliderPosition_Y / 10) + backgroundFadeOutPart2;
-
+var sliderImgNum;
+var firstOpenTransformPositionSet = transformPart1 + sliderImgNum + transformPart2;
 var width = document.body.clientWidth;
 
 var numOfImgsInGallery = document.querySelectorAll(".smallImage");
 console.log(numOfImgsInGallery.length);
 
-(function appendGalleryPopUp () {
-  if (width < 768) {
-    for (var i = 0; i < numOfImgsInGallery.length; i++) {
-      console.log(numOfImgsInGallery[i].src);
-      document.querySelectorAll(".smallImage")[i].onclick = function() {
-        document.querySelector(".galleryForMobileWrapper").style.display = "flex";
-        // document.querySelector(".galleryForMobile").style.transform = "translate3d(-100%, 0, 0)";
-      }
-    }
-  }
+// (function appendGalleryPopUp () {
+//   if (width < 768) {
+//     for (var i = 0; i < numOfImgsInGallery.length; i++) {
+//       console.log(numOfImgsInGallery[i].src);
+//       document.querySelectorAll(".smallImage")[i].onclick = function() {
+//         document.querySelector(".galleryForMobileWrapper").style.display = "flex";
+//         // document.querySelector(".galleryForMobile").style.transform = "translate3d(-100%, 0, 0)";
+//       }
+//     }
+//   }
+//
+// }());
 
-}());
+
+
+if (width < 768) {
+  function getImgPath(img) {
+      var imgPath = img.src;
+      var img = document.getElementById("img");
+      var path = imgPath.substr(imgPath.length - 10);
+      sliderImgNum = +path.replace(/\D/g,'');
+      sliderImgNum = (sliderImgNum - 1) * -100;
+      console.log(sliderImgNum);
+      var firstOpenTransformPositionSet = transformPart1 + sliderImgNum + transformPart2;
+      console.log(firstOpenTransformPositionSet);
+      document.querySelector(".galleryForMobile").style.transform = firstOpenTransformPositionSet;
+      document.querySelector(".galleryForMobileWrapper").style.display = "flex";
+      translatePosition = sliderImgNum;
+      return false;
+    };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // console.log(width);
 
@@ -67,7 +100,7 @@ img.addEventListener('touchmove', function(event) {
   sliderPosition = transformPart1 + currentFingerPositionInPercent_X + transformPart2;
 
 
-  sliderPosition_Y = transformPart1 + translatePosition + transformPart3 + currentFingerPositionInPercent_Y / 2 + transformPart4;;
+  sliderPosition_Y = transformPart1 + translatePosition + transformPart3 + currentFingerPositionInPercent_Y / 2 + transformPart4;
 
   currentFingerPositionInPercent_Y = otk.y / screenWidth * 100;     //получаем позицию пальца в реальном времени С УЧЕТОМ ПРОКРУТКИ в %
   currentFingerPositionInPercent_Y = currentFingerPositionInPercent_Y.toFixed(0);

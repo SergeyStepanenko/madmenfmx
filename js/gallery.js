@@ -9,7 +9,7 @@ if (width >= 768) {
   function getImgPath(img) {
     var imgPath = img.src;
     var img = document.getElementById("img");
-    path = imgPath.substr(imgPath.length - 10);
+    var path = imgPath.substr(imgPath.length - 10);
     sliderImgNum = +path.replace(/\D/g,'');
 
     img.setAttribute("src", "images/big/" + sliderImgNum + ".jpg");
