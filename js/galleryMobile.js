@@ -43,7 +43,6 @@ if (width < 768) {
     };
 }
 
-
 window.onload = function () {
   screenWidth = document.querySelector(".imageMobileGallery").width;
   screenHeight = document.querySelector(".imageMobileGallery").height;
@@ -68,29 +67,35 @@ img.addEventListener('touchmove', function(event) {
   sliderPosition = transformPart1 + currentFingerPositionInPercent_X + transformPart2;
 
 
-  sliderPosition_Y = transformPart1 + translatePosition + transformPart3 + currentFingerPositionInPercent_Y / 2 + transformPart4;
 
   currentFingerPositionInPercent_Y = otk.y / screenWidth * 100;     //получаем позицию пальца в реальном времени С УЧЕТОМ ПРОКРУТКИ в %
   currentFingerPositionInPercent_Y = currentFingerPositionInPercent_Y.toFixed(0);
 
 
   (function toDragimageMobileGalleryInRealTime () {
-    if (Math.abs(currentFingerPosition) > 5) {
-      currentFingerPositionInPercent_Y = 0;
-      document.querySelector(".galleryForMobile").style.transition = "all 0.0s ease-in-out";
-      document.querySelector(".galleryForMobile").style.transform = sliderPosition; // текущий сдвиг по подсчету translate в реальном времени
-    };
+    if (Math.abs(currentFingerPositionInPercent_Y) < 5) {
+      if (Math.abs(currentFingerPosition) > 5) {
+        currentFingerPositionInPercent_Y = 0;
+        document.querySelector(".galleryForMobile").style.transition = "all 0.0s ease-in-out";
+        document.querySelector(".galleryForMobile").style.transform = sliderPosition; // текущий сдвиг по подсчету translate в реальном времени
+      };
+    }
+
+  }());
+
   (function swipeUpOrDownToCloseGallery () {
-    if (currentFingerPositionInPercent_Y > 5 || currentFingerPositionInPercent_Y < -5) {
-      document.querySelector(".galleryForMobile").style.transition = "all 0.0s ease-in-out";
-      document.querySelector(".galleryForMobile").style.transform = sliderPosition_Y;
-      var fadeOut = backgroundFadeOutPart1 + (1 - Math.abs(currentFingerPositionInPercent_Y) / 100) + backgroundFadeOutPart2;
-      document.querySelector(".galleryForMobileWrapper").style.background = fadeOut;
+    if (Math.abs(currentFingerPosition) < 5) {
+      if (currentFingerPositionInPercent_Y > 5 || currentFingerPositionInPercent_Y < -5) {
+        sliderPosition_Y = transformPart1 + translatePosition + transformPart3 + currentFingerPositionInPercent_Y / 2 + transformPart4;
+        document.querySelector(".galleryForMobile").style.transition = "all 0.0s ease-in-out";
+        document.querySelector(".galleryForMobile").style.transform = sliderPosition_Y;
+        var fadeOut = backgroundFadeOutPart1 + (1 - Math.abs(currentFingerPositionInPercent_Y) / 100) + backgroundFadeOutPart2;
+        document.querySelector(".galleryForMobileWrapper").style.background = fadeOut;
+      }
     }
   })();
 
 
-  }());
 }, false);
 
 function returnimageMobileGalleryToItsIntendedPosition () {
