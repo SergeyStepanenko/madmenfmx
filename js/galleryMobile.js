@@ -41,7 +41,7 @@ if (width < 768) {
       translatePosition = sliderImgNum;
       return false;
     };
-}
+};
 
 window.onload = function () {
   screenWidth = document.querySelector(".imageMobileGallery").width;
@@ -65,15 +65,11 @@ img.addEventListener('touchmove', function(event) {
   currentFingerPositionInPercent_X = otk.x.toFixed(0) / screenWidth * 100 + translatePosition; //получаем позицию пальца в реальном времени С УЧЕТОМ ПРОКРУТКИ в %
   currentFingerPositionInPercent_X = currentFingerPositionInPercent_X.toFixed(0);
   sliderPosition = transformPart1 + currentFingerPositionInPercent_X + transformPart2;
-
-
-
   currentFingerPositionInPercent_Y = otk.y / screenWidth * 100;     //получаем позицию пальца в реальном времени С УЧЕТОМ ПРОКРУТКИ в %
   currentFingerPositionInPercent_Y = currentFingerPositionInPercent_Y.toFixed(0);
 
-
   (function toDragimageMobileGalleryInRealTime () {
-    if (Math.abs(currentFingerPositionInPercent_Y) < 5) {
+    if (Math.abs(currentFingerPositionInPercent_Y) < 15) {
       if (Math.abs(currentFingerPosition) > 5) {
         currentFingerPositionInPercent_Y = 0;
         document.querySelector(".galleryForMobile").style.transition = "all 0.0s ease-in-out";
@@ -84,7 +80,7 @@ img.addEventListener('touchmove', function(event) {
   }());
 
   (function swipeUpOrDownToCloseGallery () {
-    if (Math.abs(currentFingerPosition) < 5) {
+    if (Math.abs(currentFingerPosition) < 30) {
       if (currentFingerPositionInPercent_Y > 5 || currentFingerPositionInPercent_Y < -5) {
         sliderPosition_Y = transformPart1 + translatePosition + transformPart3 + currentFingerPositionInPercent_Y / 2 + transformPart4;
         document.querySelector(".galleryForMobile").style.transition = "all 0.0s ease-in-out";
@@ -94,16 +90,15 @@ img.addEventListener('touchmove', function(event) {
       }
     }
   })();
-
-
 }, false);
 
-function returnimageMobileGalleryToItsIntendedPosition () {
-  initialPosition = transformPart1 + translatePosition + transformPart2;
-  document.querySelector(".galleryForMobile").style.transform = initialPosition;
-};
+  function returnimageMobileGalleryToItsIntendedPosition () {
+    initialPosition = transformPart1 + translatePosition + transformPart2;
+    document.querySelector(".galleryForMobile").style.transform = initialPosition;
+  };
 
 img.addEventListener('touchend', function(event) {
+
   document.querySelector(".galleryForMobileWrapper").style.background = "rgba(0, 0, 0, 1)";
   eval (animationOn);
 
@@ -137,8 +132,6 @@ img.addEventListener('touchend', function(event) {
       document.querySelector(".galleryForMobile").style.transform = transformPart1 + 0 + transformPart2;
       document.querySelector(".galleryForMobile").style.transition = "all 0.5s cubic-bezier(0.47, 0.48, 0.5, 0.67)"
       translatePosition = 0;
-
-
     }
   })();
 }, false);
