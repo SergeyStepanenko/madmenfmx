@@ -70,7 +70,7 @@ img.addEventListener('touchmove', function(event) {
 
   (function toDragimageMobileGalleryInRealTime () {
     if (Math.abs(currentFingerPositionInPercent_Y) < 15) {
-      if (Math.abs(currentFingerPosition) > 5) {
+      if (Math.abs(currentFingerPosition) > 1) {
         currentFingerPositionInPercent_Y = 0;
         document.querySelector(".galleryForMobile").style.transition = "all 0.0s ease-in-out";
         document.querySelector(".galleryForMobile").style.transform = sliderPosition; // текущий сдвиг по подсчету translate в реальном времени
