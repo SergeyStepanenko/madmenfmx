@@ -360,6 +360,14 @@ body {
   transition: width 0.9s ease;
 }*/
 
+.contactDetails div {
+  margin: 0 auto;
+  width: 200px;
+  text-align: center;
+  font: 1.2rem "RobotoRegular"
+}
+
+
 .blockVideo {
   display: -webkit-box;
   display: -ms-flexbox;
