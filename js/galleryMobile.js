@@ -25,7 +25,6 @@ var backgroundOpacityChange = backgroundFadeOutPart1 + (sliderPosition_Y / 10) +
 var sliderImgNum;
 var firstOpenTransformPositionSet = transformPart1 + sliderImgNum + transformPart2;
 var width = document.body.clientWidth;
-
 var numOfImgsInGallery = document.querySelectorAll(".smallImage");
 
 if (width < 768) {
@@ -116,7 +115,7 @@ img.addEventListener('touchend', function(event) {
   }());
 
   (function toShowNextOrPreviousimageMobileGalleryOrNot () {
-    if (currentFingerPosition < -7) { //если перетащил БОЛЬШЕ чем на 20% ВЛЕВО или это последняя картинка - тогда картинка ПЕРЕКЛЮЧАЕТСЯ ВЛЕВО
+    if (currentFingerPosition < -7 && leng != translatePosition) { //если перетащил БОЛЬШЕ чем на 20% ВЛЕВО или это последняя картинка - тогда картинка ПЕРЕКЛЮЧАЕТСЯ ВЛЕВО
       translatePosition += -100;
       returnimageMobileGalleryToItsIntendedPosition ();
     } else if (currentFingerPosition > 7 & translatePosition != 0) { //если перетащил БОЛЬШЕ чем на 20% ВПРАВО - тогда картинка ПЕРЕКЛЮЧАЕТСЯ ВПРАВО
@@ -125,13 +124,13 @@ img.addEventListener('touchend', function(event) {
     } else if (translatePosition == 0) { //если перетащил первую картинку ВЛЕВО более чем на 20% вправо, то НЕ ПЕРЕКЛЮЧАТЬ
       returnimageMobileGalleryToItsIntendedPosition ();
     }
-    else if (translatePosition > leng) {
+    else if (translatePosition == leng) {
       document.querySelector(".galleryForMobile").style.transform = initialPosition;
     }
-    if (translatePosition == leng + -100) {
-      document.querySelector(".galleryForMobile").style.transform = transformPart1 + 0 + transformPart2;
-      document.querySelector(".galleryForMobile").style.transition = "all 0.5s cubic-bezier(0.47, 0.48, 0.5, 0.67)"
-      translatePosition = 0;
-    }
+    // if (translatePosition == leng + -100) {
+    //   document.querySelector(".galleryForMobile").style.transform = transformPart1 + 0 + transformPart2;
+    //   document.querySelector(".galleryForMobile").style.transition = "all 0.5s cubic-bezier(0.47, 0.48, 0.5, 0.67)"
+    //   translatePosition = 0;
+    // }
   })();
 }, false);

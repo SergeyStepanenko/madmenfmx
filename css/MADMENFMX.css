@@ -347,6 +347,7 @@ body {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin: 0 50px;
 }
 
 .youtubeVideo {
