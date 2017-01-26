@@ -90,6 +90,25 @@
 
       <div id="main"class="contentWrapper">
             <div class="center">
+              <h1 id="ourTeam"class="blockHeader"><span class="red">MAD</span> MEN</h1>
+              <div class="madMenIntro">
+                <div class="mmLogoDiablo"><img src="images/LOGO_MM_Diablo.png" alt="" width="80px"></div>
+                <div class="madMenIntroText"><span style="color: #AA2222; font-weight: bold">М</span>олодая перспективная команда, профессионально занимающаясяFMX'ом.
+                  Ребята бесстрашно справляются с гравитацией и показывают невероятно зрелищные трюки!
+                  На любом мероприятии выступление команды по мотофристайлу - это всегда гвоздь программы!
+                  Захватывающие дух эмоции и выброс адреналина испытают даже самые стойкие зрители!</div>
+                  <div class="madMenIntroImgBlock"><img class="madMenIntroImg" src="images/big/madmenintro.jpg" alt=""></div>
+              </div>
+
+
+
+
+
+
+
+
+
+              <hr class="separatorLine">
                 <span id="ourTeam"class="blockHeader"><span class="red">НАШИ</span> РАЙДЕРЫ</span>
                 <div class="blockOurRiders">
                   <div class="blockOurRidersPair1">
@@ -195,25 +214,25 @@
 
 
   <hr class="separatorLine">
+  <a name="advantages"></a>
   <span id="ourTeam"class="blockHeader"><span class="red">НАШИ</span> ПРЕИМУЩЕСТВА</span>
   <div class="blockAdvantages">
-    <a name="advantages"></a>
       <div class="advantagesImages">
-          <div id="img1">
-            <img class="advantagesImg" src="images/1.png" alt="" height="300px">
+          <div id="img1" class="advantagesImgBlock">
+            <img class="advantagesImg" src="images/1.png" alt="" height="250px">
             <div class="textAdvantages"id="t-shirts">Футболки с символикой нашей команды</div>
           </div>
-          <div id="img2">
-            <img class="advantagesImg" src="images/2.png" alt="" height="300px">
+          <div id="img2" class="advantagesImgBlock">
+            <img class="advantagesImg" src="images/2.png" alt="" height="250px">
             <div class="textAdvantages" id="people">Работа со зрителем</div>
           </div>
 
-          <div id="img3">
-            <img class="advantagesImg" src="images/3.png" alt="" height="300px">
+          <div id="img3" class="advantagesImgBlock">
+            <img class="advantagesImg" src="images/3.png" alt="" height="250px">
             <div class="textAdvantages" id="speaker">Профессиональный ведущий</div>
           </div>
-          <div id="img4">
-            <img class="advantagesImg" src="images/4.png" alt="" height="300px">
+          <div id="img4" class="advantagesImgBlock">
+            <img class="advantagesImg" src="images/4.png" alt="" height="250px">
             <div class="textAdvantages" id="cooperation">Сотрудничество с BMX и MTB спортсменами</div>
           </div>
       </div>
@@ -313,24 +332,22 @@
 <script type="text/javascript" src="js/galleryMobile.js"></script>
 
 
-<!--- Плавный скролл ----------------------------------------------------------------------------------------------->
-      <script>
-      $(function(){
-          $('a[href*=#]').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-              && location.hostname == this.hostname) {
-                  var $target = $(this.hash);
-                  $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
-                  if ($target.length) {
-                      var targetOffset = $target.offset().top;
-                      $('html,body').animate({scrollTop: targetOffset}, 500);//скорость прокрутки
-                      return false;
-                  }
-              }
-          });
-      });
-      </script>
-<!----------------------------------------------------------------------------------------------------------------------->
+<script>
+$(function(){
+    $('a[href*=#]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+        && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+                $('html,body').animate({scrollTop: targetOffset}, 500);//скорость прокрутки
+                return false;
+            }
+        }
+    });
+});
+</script>
 
   </body>
 <html>

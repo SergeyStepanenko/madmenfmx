@@ -30,14 +30,31 @@ body {
   -webkit-box-flex: 3;
       -ms-flex: 3 1 768px;
           flex: 3 1 768px;
-  margin-top: 20px;
 }
 
+.madMenIntro {
+  display: inline-block;
+  margin: 0 70px;
+}
+.mmLogoDiablo {
+  float: left;
+}
+.madMenIntroText {
+  /*margin-top: 10px;*/
+  font: 1.2rem "RobotoRegular";
+}
+
+.madMenIntroImg {
+  margin-top: 10px;
+  width: 100%;
+  box-shadow: 0px 0px 56px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
 .header {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   left: 0;
-  position: fixed;
+  position: static;
   right: 0;
   z-index: 1030;
   background-color: #AA2222;
@@ -99,7 +116,7 @@ body {
 }
 
 .headerForSmallDevices {
-
+  display: none;
 }
 
 
@@ -287,6 +304,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 0 50px;
 }
 
 .advantagesImages {
@@ -298,11 +316,15 @@ body {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 90%;
+  max-width: 1200px;
+}
+
+.advantagesImgBlock {
+  /*margin-right: 5px;*/
 }
 
 .textAdvantages {
-  width: 300px;
+  width: 250px;
   font-family: "RobotoRegular";
   font-size: 1em;
   border-top: 5px solid #AA2222;
@@ -327,7 +349,7 @@ body {
   margin: 0 5px 0 5px;
 }
 
-.partnerImg{
+/*.partnerImg{
   -webkit-transition:width 0.9s ease;
   transition: width 0.9s ease;
 }
@@ -336,7 +358,7 @@ body {
   width: 200px;
   -webkit-transition:width 0.9s ease;
   transition: width 0.9s ease;
-}
+}*/
 
 .blockVideo {
   display: -webkit-box;
