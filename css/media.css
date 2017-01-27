@@ -23,6 +23,16 @@
 		width: 700px;
 		height: auto;
 	}
+	.phone {
+		font-size: 0.9em;
+		margin-top: 11px;
+	}
+	.headerBlock2 ul a {
+		font-size: 0.7em;
+	}
+	.headerSocials {
+		margin: 5px 0 0 0px;
+	}
 }
 
 /* custom */
@@ -45,6 +55,16 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px) {
+	.center {
+		margin: 0;
+	}
+	.header {
+		display: block;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
 	.blockSmallImages,
 	.blockVideo,
 	.blockAdvantages{
@@ -56,11 +76,16 @@
 	.headerButtonArrow {
 		position: fixed;
 		right: 3vw;
-		bottom: 3vh;
+		bottom: 7vh;
 	}
 
-	.headerBlock2 {
+	.headerBlock2 ul a {
 		display: none;
+	}
+
+
+	.phone {
+		font-size: 1.2em;
 	}
 
 	.headerBlock3 {

@@ -30,6 +30,26 @@ body {
   -webkit-box-flex: 3;
       -ms-flex: 3 1 768px;
           flex: 3 1 768px;
+  margin-top: 50px;
+}
+.headerSocials {
+  margin: 5px 10px 0 0px;
+  left: 0px;
+  /*position: fixed;*/
+}
+.phone {
+  font: 1.5em "RobotoRegular";
+  color: #fff;
+  margin: 8px 0 0 5px;
+}
+/*.phone a {
+  text-decoration: none;
+}*/
+
+a,
+a:visited,
+a:active {
+  color: white;
 }
 
 .madMenIntro {
@@ -51,16 +71,18 @@ body {
   border-radius: 2px;
 }
 .header {
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   left: 0;
-  position: static;
+  position: fixed;
   right: 0;
   z-index: 1030;
   background-color: #AA2222;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-around;
+      -ms-flex-pack: space-around;
+        justify-content: space-around;
+
 }
 
 .headerBlock1 {
@@ -81,6 +103,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: space-around;
 }
 
 .headerBlock2 ul a{
@@ -102,7 +125,7 @@ body {
 
 .headerBlock2 ul a {
   text-decoration: none;
-  font-size: 0.8em;
+  font-size: 1em;
   padding: 0 5px 0 5px;
   font-family: "RobotoLight";
   color: #F5F5F5;
