@@ -2,10 +2,8 @@
 ::selection {color:#fff;background:#850D0E;}
 ::-moz-selection {color:#fff;background:#850D0E;}
 
-
 html {
 }
-
 body {
   position: relative;
   margin: 0 0 0 0;
@@ -14,18 +12,17 @@ body {
   overflow-x: hidden;
   background-color: #F5F5F5;
 }
-
-
-
-
 .contentWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
+  transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
-
 .center {
   -webkit-box-flex: 3;
       -ms-flex: 3 1 768px;
@@ -33,18 +30,23 @@ body {
   margin-top: 50px;
 }
 .headerSocials {
-  margin: 5px 10px 0 0px;
-  left: 0px;
-  /*position: fixed;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font: 1.5em "RobotoRegular";
   color: #fff;
-  margin: 8px 0 0 5px;
 }
-/*.phone a {
-  text-decoration: none;
-}*/
 
 a,
 a:visited,
@@ -71,6 +73,8 @@ a:active {
   border-radius: 2px;
 }
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -103,7 +107,8 @@ a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .headerBlock2 ul a{
@@ -394,12 +399,14 @@ a:active {
   -webkit-transition:width 0.9s ease;
   transition: width 0.9s ease;
 }*/
-
+.contactDetails {
+  margin-bottom: 100px;
+}
 .contactDetails div {
   margin: 0 auto;
   width: 200px;
   text-align: center;
-  font: 1.2rem "RobotoRegular"
+  font: 1.2rem "RobotoRegular";
 }
 
 
@@ -633,3 +640,7 @@ a:active {
 }
 
 /*--------------------------------------------galleryMobile----------------------------------------------*/
+
+.emailYulia {
+  color: black !important;
+}

@@ -36,6 +36,8 @@ if (width < 768) {
       sliderImgNum = (sliderImgNum - 1) * -100;
       var firstOpenTransformPositionSet = transformPart1 + sliderImgNum + transformPart2;
       document.querySelector(".galleryForMobile").style.transform = firstOpenTransformPositionSet;
+      // document.querySelector(".galleryForMobile").style.Webkittransform = firstOpenTransformPositionSet;
+      // document.querySelector(".galleryForMobile").style.mstransform = firstOpenTransformPositionSet;
       document.querySelector(".galleryForMobileWrapper").style.display = "flex";
       translatePosition = sliderImgNum;
       return false;
@@ -75,7 +77,6 @@ img.addEventListener('touchmove', function(event) {
         document.querySelector(".galleryForMobile").style.transform = sliderPosition; // текущий сдвиг по подсчету translate в реальном времени
       };
     }
-
   }());
 
   (function swipeUpOrDownToCloseGallery () {
