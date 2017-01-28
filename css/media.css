@@ -56,10 +56,6 @@
 	.phone {
 		font-size: 0.1em;
 	}
-	.headerSocials a img {
-		width: 50px;
-		height: 50px;
-	}
 	.headerButtonArrow {
 		display: none;
 	}
@@ -68,6 +64,13 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px) {
+	.contactDetails {
+	  margin-bottom: 100px;
+	}
+	.headerSocials a img {
+		width: 50px;
+		height: 50px;
+	}
 	.center {
 		margin: 0;
 	}

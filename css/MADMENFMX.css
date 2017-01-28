@@ -10,7 +10,7 @@ body {
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
-  background-color: #F5F5F5;
+  background-color: rgba(0, 0, 0, 0.18);
 }
 .contentWrapper {
   display: -webkit-box;
@@ -22,6 +22,7 @@ body {
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
+  background: rgba(245, 245, 245, 0.88);
 }
 .center {
   -webkit-box-flex: 3;
@@ -44,9 +45,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font: 1.5em "RobotoRegular";
+  font: 1.2em "RobotoRegular";
   color: #fff;
 }
+.headerSocials a img {
+  width: 40px;
+  height: 40px;
+}
+
 
 a,
 a:visited,
@@ -134,7 +140,7 @@ a:active {
   padding: 0 5px 0 5px;
   font-family: "RobotoLight";
   color: #F5F5F5;
-  line-height: 50px;
+  line-height: 55px;
 }
 
 .headerBlock3 {
@@ -399,9 +405,7 @@ a:active {
   -webkit-transition:width 0.9s ease;
   transition: width 0.9s ease;
 }*/
-.contactDetails {
-  margin-bottom: 100px;
-}
+
 .contactDetails div {
   margin: 0 auto;
   width: 200px;
