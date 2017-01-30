@@ -52,6 +52,7 @@ window.onload = function () {
 img.addEventListener('touchstart', function (event) {
   event.preventDefault();
   event.stopPropagation();
+  event.preventDefault = false;
 
   startPoint.x = event.changedTouches[0].pageX || event.changedTouches[0].clientX;
   startPoint.y = event.changedTouches[0].pageY || event.changedTouches[0].clientY;
@@ -70,6 +71,8 @@ img.addEventListener('touchmove', function(event) {
   currentFingerPositionInPercent_Y = currentFingerPositionInPercent_Y.toFixed(0);
 
   (function toDragimageMobileGalleryInRealTime () {
+    event.preventDefault();
+    event.stopPropagation();
     if (Math.abs(currentFingerPositionInPercent_Y) < 15) {
       if (Math.abs(currentFingerPosition) > 1) {
         currentFingerPositionInPercent_Y = 0;
@@ -80,6 +83,8 @@ img.addEventListener('touchmove', function(event) {
   }());
 
   (function swipeUpOrDownToCloseGallery () {
+    event.preventDefault();
+    event.stopPropagation();
     if (Math.abs(currentFingerPosition) < 30) {
       if (currentFingerPositionInPercent_Y > 5 || currentFingerPositionInPercent_Y < -5) {
         sliderPosition_Y = transformPart1 + translatePosition + transformPart3 + currentFingerPositionInPercent_Y / 2 + transformPart4;
@@ -93,22 +98,29 @@ img.addEventListener('touchmove', function(event) {
 }, false);
 
   function returnimageMobileGalleryToItsIntendedPosition () {
+    event.preventDefault();
+    event.stopPropagation();
     initialPosition = transformPart1 + translatePosition + transformPart2;
     document.querySelector(".galleryForMobile").style.transform = initialPosition;
   };
 
 img.addEventListener('touchend', function(event) {
-
+  event.preventDefault();
+  event.stopPropagation();
   document.querySelector(".galleryForMobileWrapper").style.background = "rgba(0, 0, 0, 1)";
   eval (animationOn);
 
   (function ifDraggedUpOrDownForMoreThen20Percent () {
+    event.preventDefault();
+    event.stopPropagation();
     if (Math.abs(currentFingerPositionInPercent_Y) > 20) {
       document.querySelector(".galleryForMobileWrapper").style.display = "none";
     }
   }());
 
   (function ifDraggedLessThan20Percent () {
+    event.preventDefault();
+    event.stopPropagation();
     if (Math.abs(currentFingerPosition) < 30) {
       initialPosition = transformPart1 + translatePosition + transformPart2;
       document.querySelector(".galleryForMobile").style.transform = initialPosition;
@@ -116,6 +128,8 @@ img.addEventListener('touchend', function(event) {
   }());
 
   (function toShowNextOrPreviousimageMobileGalleryOrNot () {
+    event.preventDefault();
+    event.stopPropagation();
     if (currentFingerPosition < -7 && leng != translatePosition) { //если перетащил БОЛЬШЕ чем на 20% ВЛЕВО или это последняя картинка - тогда картинка ПЕРЕКЛЮЧАЕТСЯ ВЛЕВО
       translatePosition += -100;
       returnimageMobileGalleryToItsIntendedPosition ();
@@ -126,6 +140,8 @@ img.addEventListener('touchend', function(event) {
       returnimageMobileGalleryToItsIntendedPosition ();
     }
     else if (translatePosition == leng) {
+      event.preventDefault();
+      event.stopPropagation();
       document.querySelector(".galleryForMobile").style.transform = initialPosition;
     }
     // if (translatePosition == leng + -100) {
