@@ -238,6 +238,13 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
+	/*.showsBlock div {
+		max-width: 95%;
+		width: 95%;
+	}
+	.showsBlock div img{
+		width: 100%;
+	}*/
 	.showsCalendar  {
 	  width: 300px;
 	}
@@ -274,7 +281,18 @@
 
 }
 
+/* customer */
+@media only screen and (max-width : 435px) {
+	.showsBlock div {
+		max-width: 95%;
+		width: 95%;
+	}
+	.showsBlock div img{
+		width: 100%;
+	}
+}
 /* Custom, iPhone Retina */
+
 @media only screen and (max-width : 320px) {
 
 	html {
