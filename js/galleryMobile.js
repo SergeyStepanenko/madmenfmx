@@ -16,7 +16,6 @@ var currentFingerPositionInPercent_Y;
 var currentFingerPosition;
 var otk = {};
 var initialPosition;
-var animationOn = 'document.querySelector(".galleryForMobile").style.transition = "all 0.2s cubic-bezier(0.47, 0.48, 0.5, 0.67)"';
 var screenWidth;
 var screenHeight;
 var backgroundFadeOutPart1 = "rgba(0, 0, 0, "
@@ -108,7 +107,7 @@ img.addEventListener('touchend', function(event) {
   event.preventDefault();
   event.stopPropagation();
   document.querySelector(".galleryForMobileWrapper").style.background = "rgba(0, 0, 0, 1)";
-  eval (animationOn);
+  document.querySelector(".galleryForMobile").style.transition = "all 0.2s cubic-bezier(0.47, 0.48, 0.5, 0.67)";
 
   (function ifDraggedUpOrDownForMoreThen20Percent () {
     event.preventDefault();
