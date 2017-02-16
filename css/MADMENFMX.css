@@ -606,6 +606,11 @@ a:active {
   padding: 0 10px 10px 0;
 }
 
+.emailYulia {
+  color: black !important;
+  white-space: nowrap;
+}
+
 /*--------------------------------------------galleryMobile----------------------------------------------*/
 @media only screen and (max-width : 767px) {
   .galleryForMobileWrapper {
@@ -658,7 +663,3 @@ a:active {
 }
 
 /*--------------------------------------------galleryMobile----------------------------------------------*/
-
-.emailYulia {
-  color: black !important;
-}
