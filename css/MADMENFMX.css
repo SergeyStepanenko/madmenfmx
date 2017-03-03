@@ -395,6 +395,9 @@ a:active {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0 50px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .ourPartnersLogos {
