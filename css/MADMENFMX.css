@@ -190,19 +190,15 @@ a:active {
   max-width: 300px;
   min-width: 299px;
 }
-
-
 .riderName {
   font: 33px "American Captain", Consolas, Sans-Serif;
 	color: #AA2222;
   padding: 0 0 0 10px;
 }
-
 .riderDescription {
   padding: 0 0 0 10px;
 }
-
-.blockHeader{
+.blockHeader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

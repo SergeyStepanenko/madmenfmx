@@ -45,56 +45,9 @@ document.querySelectorAll(".closePopup")[0].onclick = function() {
     e.preventDefault ? e.preventDefault() : (e.returnValue = false);
   });
 
-
-
-  gall.onkeydown = gall.onkeyup = gall.onkeypress = handle;
-
-  var lastTime = Date.now();
-
-  function handle(e) {
-    if (form.elements[e.type + 'Ignore'].checked) return;
-
-    var text = e.type +
-      ' keyCode=' + e.keyCode +
-      ' which=' + e.which +
-      ' charCode=' + e.charCode +
-      ' char=' + String.fromCharCode(e.keyCode || e.charCode) +
-      (e.shiftKey ? ' +shift' : '') +
-      (e.ctrlKey ? ' +ctrl' : '') +
-      (e.altKey ? ' +alt' : '') +
-      (e.metaKey ? ' +meta' : '') + "\n";
-
-    if (area.value && Date.now() - lastTime > 250) {
-      console.log(area.value += new Array(81).join('-') + '\n');;
-    }
-    lastTime = Date.now();
-
-    console.log(area.value += text);;
-
-    if (form.elements[e.type + 'Stop'].checked) {
-      e.preventDefault();
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
   gall.addEventListener("keydown", function(event) {
     console.log('hi');
         }, false);
-
-
-
-
 
   function onWheel(e) {
     e = e || window.event;
@@ -102,8 +55,6 @@ document.querySelectorAll(".closePopup")[0].onclick = function() {
     delta == 100 ? moveForward() : moveBackward();
     e.preventDefault ? e.preventDefault() : (e.returnValue = false);
   };
-
-
 
   function moveBackward (){
     var img = document.getElementById("img");
@@ -125,5 +76,5 @@ document.querySelectorAll(".closePopup")[0].onclick = function() {
       }else {
         img.setAttribute("src", "images/big/" + sliderImgNum + ".jpg");
       }
-};
+  };
 }());

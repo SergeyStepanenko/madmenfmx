@@ -1,30 +1,30 @@
 ; "use strict";
-var startPoint = {};
-var nowPoint;
-var img = document.querySelector(".galleryForMobile");
-var leng = document.querySelectorAll(".imageMobileGallery").length * -100 + 100;
-var translatePosition = 0;
-var transformPart1 = "translate3d(";
-var transformPart2 = "%, 0, 0)";
-var transformPart3 = "%,";
-var transformPart4 = "%, 0)";
-var counter;
-var sliderPosition = 0;
-var sliderPosition_Y;
-var currentFingerPositionInPercent_X;
-var currentFingerPositionInPercent_Y;
-var currentFingerPosition;
-var otk = {};
-var initialPosition;
-var screenWidth;
-var screenHeight;
-var backgroundFadeOutPart1 = "rgba(0, 0, 0, "
-var backgroundFadeOutPart2 = ")"
-var backgroundOpacityChange = backgroundFadeOutPart1 + (sliderPosition_Y / 10) + backgroundFadeOutPart2;
-var sliderImgNum;
-var firstOpenTransformPositionSet = transformPart1 + sliderImgNum + transformPart2;
-var width = document.body.clientWidth;
-var numOfImgsInGallery = document.querySelectorAll(".smallImage");
+var startPoint = {},
+    nowPoint,
+    img = document.querySelector(".galleryForMobile"),
+    leng = document.querySelectorAll(".imageMobileGallery").length * -100 + 100,
+    translatePosition = 0,
+    transformPart1 = "translate3d(",
+    transformPart2 = "%, 0, 0)",
+    transformPart3 = "%,",
+    transformPart4 = "%, 0)",
+    counter,
+    sliderPosition = 0,
+    sliderPosition_Y,
+    currentFingerPositionInPercent_X,
+    currentFingerPositionInPercent_Y,
+    currentFingerPosition,
+    otk = {},
+    initialPosition,
+    screenWidth,
+    screenHeight,
+    backgroundFadeOutPart1 = "rgba(0, 0, 0, ",
+    backgroundFadeOutPart2 = ")",
+    backgroundOpacityChange = backgroundFadeOutPart1 + (sliderPosition_Y / 10) + backgroundFadeOutPart2,
+    sliderImgNum,
+    firstOpenTransformPositionSet = transformPart1 + sliderImgNum + transformPart2,
+    width = document.body.clientWidth,
+    numOfImgsInGallery = document.querySelectorAll(".smallImage");
 
 if (width < 768) {
   function getImgPath(img) {
