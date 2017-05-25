@@ -2,6 +2,21 @@
 ::selection {color:#fff;background:#850D0E;}
 ::-moz-selection {color:#fff;background:#850D0E;}
 
+.hide {
+    display: none !important;
+}
+
+#languageBtn {
+    height: 30px;
+    width: 50px;
+}
+
+.language {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+}
+
 html {
 }
 body {
@@ -11,6 +26,7 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   background-color: rgba(0, 0, 0, 0.18);
+  z-index: -11;
 }
 .contentWrapper {
   display: -webkit-box;
@@ -22,7 +38,7 @@ body {
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
-  background: rgba(245, 245, 245, 0.88);
+  background: rgba(245, 245, 245, 1);
 }
 .center {
   -webkit-box-flex: 3;
@@ -206,7 +222,7 @@ a:active {
       -ms-flex-pack: center;
           justify-content: center;
   max-height: 100px;
-  font: 60px "American Captain", Consolas, sans-serif;
+  font: 62px "American Captain", Consolas, sans-serif;
   /*padding: 10px 10px 10px 10px;*/
   padding: 50px 10px 10px 10px;
 }

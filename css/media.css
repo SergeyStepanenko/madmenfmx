@@ -86,7 +86,7 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px) {
 	.contactDetails {
-	  margin-bottom: 100px;
+       margin-bottom: 100px;
 	}
 	.headerSocials a img {
 		width: 50px;
@@ -94,6 +94,7 @@
 	}
 	.headerSocials {
 		display: flex;
+        margin: 0 auto;
 	}
 	.center {
 		margin: 0;
@@ -145,11 +146,11 @@
 
 	.headerForSmallDevices {
 		display: block;
-		position: relative;
-		z-index: 10;
+		position: absolute;
+		z-index: -10;
 		-ms-flex-flow: column;
 		    flex-flow: column;
-		top: -325px;
+		top: 0px;
 		width: 100%;
 		height: 0px;
 		transition: all 0.5s ease-in-out;
